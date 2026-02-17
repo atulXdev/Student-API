@@ -64,6 +64,16 @@ app.put("/users/:id", (req, res) => {
     name: req.body.name,
   };
 
+  //delting a user
+  app.delete("/user/:id",(req,res)=>{
+    const userId = Number(req.params.id);
+  const index = users.findIndex(u => u.uid === userId);
+  users.splice(index,1);
+
+  res.json({message:"User deleted sucessfully"})
+
+  })
+
   res.status(200).json({
     message: "User replaced",
     user: users[index]
