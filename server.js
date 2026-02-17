@@ -1,6 +1,7 @@
 import express from "express"
 const app=express();
 app.use(express.json());
+app.use(cors())
 const users = [
   { att: '80', uid: 108243, total_sub: 14, bonus: '20', name: 'Dax' },
   { att: '92', uid: 108244, total_sub: 16, bonus: '25', name: 'Aarav' },
